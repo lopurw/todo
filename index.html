@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Список задач</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="simple-todo">
-        <div class="left">
-            <div class="tasks-wrapper">
-                <h2>Список задач</h2>
-                <ul id="todo-list">
-                
-                </ul>
-            </div>
+    <div class="container">
+        <h1>Список задач</h1>
+        <div class="filter">
+            <label for="filterSelect">Сортировать по:</label>
+            <select id="filterSelect">
+                <option value="default">Умолчанию</option>
+                <option value="name">Названию</option>
+                <option value="date">Дате выполнения</option>
+            </select>
         </div>
-        <div class="right"> 
-            <form id="todo-form">
-            <input id="todo-input" type="text" placeholder="Введите задачу" />
-            <button type="submit" class="bt">Добавить</button>
-        </form>
+        <div id="taskList" class="task-list">
+            <p id="emptyMessage">Список пуст</p>
+        </div>
+        <button id="addTaskBtn" class="add-task-btn">+</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Добавить задачу</h2>
+            <input type="text" id="taskName" placeholder="Название задачи">
+            <input type="text" id="taskDescription" placeholder="Описание задачи">
+            <input type="date" id="taskDueDate">
+            <button id="addBtn">Добавить</button>
         </div>
     </div>
 
